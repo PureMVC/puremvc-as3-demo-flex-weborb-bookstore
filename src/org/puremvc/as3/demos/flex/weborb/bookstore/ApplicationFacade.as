@@ -41,7 +41,7 @@ package org.puremvc.as3.demos.flex.weborb.bookstore
 			
 		}
 
-		public function startup( app:PureMVCExample ):void
+		public function startup( app:Bookstore ):void
 		{
 			facade.notifyObservers( new Notification( ApplicationFacade.APP_INIT, app ) );
 		}
