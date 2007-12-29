@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Panel title="The Selected Book" xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:vo="org.puremvc.as3.demos.flex.weborb.bookstore.model.vo.*"
+	layout="absolute" width="400" height="300" 
+	enabled="{ currentBook!=null}">
+
+	<mx:Metadata>
+		[Event("Update")]
+	</mx:Metadata>
+
+	<mx:Script>
+		<![CDATA[
+			import mx.controls.DateField;
+			import mx.formatters.DateBase;
+			import org.puremvc.as3.demos.flex.weborb.bookstore.model.vo.Book;
+			
+			[Bindable]
+			public var currentBook:Book;
+			
+			public static const EVENT_UPDATE:String = "Update";
+		]]>
+	</mx:Script>
+	
+	<vo:Book id="editedBook"
+		idbook="{ currentBook.idbook}"
+		idauthor="{ currentBook.idauthor}"
+		title="{ titleTi.text}"
+		price="{ Number(priceTi.text)}"
+		date="{ DateField.dateToString( dateDF.selectedDate, 'YYYY-MM-DD')}"
+		is_public="{ publicCB.selected}"
+		/>
+
+	<mx:Form x="10" y="10">
+		<mx:FormHeading label="{currentBook.title}"/>
+		<mx:FormItem label="id">
+			<mx:Label text="{ currentBook.idbook}"/>
+		</mx:FormItem>
+		<mx:FormItem label="author">
+			<mx:Label text="{ currentBook.idauthor}"/>
+		</mx:FormItem>
+		<mx:FormItem label="Title">
+			<mx:TextInput id="titleTi" text="{ currentBook.title}"/>
+		</mx:FormItem>
+		<mx:FormItem label="Price">
+			<mx:TextInput id="priceTi" text="{ currentBook.price}"/>
+		</mx:FormItem>
+		<mx:FormItem label="Date">
+			<mx:DateField id="dateDF" selectedDate="{ DateField.stringToDate( currentBook.date, 'YYYY-MM-DD')}"/>
+		</mx:FormItem>
+		<mx:FormItem label="Published">
+			<mx:CheckBox id="publicCB" label="" selected="{ currentBook.is_public}"/>
+		</mx:FormItem>
+	</mx:Form>
+	<mx:ControlBar horizontalAlign="center">
+		<mx:Button label="Update" click=" dispatchEvent(new Event(EVENT_UPDATE))"/>
+	</mx:ControlBar>
+	
+</mx:Panel>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute"
+	creationComplete="facade.startup(this)" 
+	xmlns:ns1="org.puremvc.as3.demos.flex.weborb.bookstore.view.components.*">
+
+	<mx:Script>
+		<![CDATA[
+			import org.puremvc.as3.demos.flex.weborb.bookstore.ApplicationFacade;
+			private var facade:ApplicationFacade = ApplicationFacade.getInstance();
+		]]>
+	</mx:Script>
+	
+	<ns1:BookForm id="bookForm" x="418" y="10">
+	</ns1:BookForm>
+	<ns1:BooksPanel id="booksPanel" x="10" y="10">
+	</ns1:BooksPanel>
+	
+</mx:Application>

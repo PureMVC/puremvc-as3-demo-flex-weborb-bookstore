@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Panel title="The Books" xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="400" height="300">
+
+	<mx:Script>
+		<![CDATA[
+			import org.puremvc.as3.demos.flex.weborb.bookstore.model.vo.Book;
+			import mx.collections.ArrayCollection;
+
+			public static const CREATE:String = 'create';
+			public static const REMOVE:String = 'remove';	
+			public static const SELECT:String = 'select';	
+			
+			[Bindable]		
+			public var books:ArrayCollection;
+			[Bindable]
+			public var selectedBook:Book;
+			
+			
+			
+			private function selectBook(pBook:Book):void
+			{
+				selectedBook = pBook ;
+				dispatchEvent(new Event(SELECT, true));
+			}
+			
+		]]>
+	</mx:Script>
+
+	<mx:DataGrid
+		selectedItem="{selectedBook}"
+		change="selectBook(event.target.selectedItem as Book)"
+		dataProvider="{books}" left="10" top="10" bottom="10" right="10">
+		<mx:columns>
+			<mx:DataGridColumn headerText="Title" dataField="title"/>
+			<mx:DataGridColumn headerText="Price" dataField="price"/>
+			<mx:DataGridColumn headerText="Date" dataField="date"/>
+		</mx:columns>
+	</mx:DataGrid>
+	<mx:ControlBar horizontalAlign="center">
+		<mx:Button label="Create" click=" dispatchEvent(new Event(CREATE, true))"/>
+		<mx:Button label="Delete" click=" dispatchEvent(new Event(REMOVE, true))"/>	
+	</mx:ControlBar>
+	
+</mx:Panel>
