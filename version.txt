@@ -11,4 +11,9 @@ Release Date: 12/28/07
 --------------------------------------------------------------------------
 0.9 - Checked in initial folder structure and license - CLH
 
+0.9.1 - Replaced package names in various source files 
+	- Removed the façade reference in the Application facade startup method
+	- Added copyright informations on MXML files
+	- Added the actual PHP Service and VO
+
 1.0 - ??

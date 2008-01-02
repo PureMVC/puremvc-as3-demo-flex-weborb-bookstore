@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+ PureMVC AS3 Demo - Flex/WebORB Bookstore
+ By David Deraedt <david.deraedt@puremvc.org>
+ Your reuse is governed by the Creative Commons Attribution 3.0 License
+-->
 <mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute"
 	creationComplete="facade.startup(this)" 
 	xmlns:ns1="org.puremvc.as3.demos.flex.weborb.bookstore.view.components.*">

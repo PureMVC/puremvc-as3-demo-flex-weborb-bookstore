@@ -5,9 +5,10 @@
 */
 package org.puremvc.as3.demos.flex.weborb.bookstore
 {
+	import org.puremvc.as3.demos.flex.weborb.bookstore.control.*;
 	import org.puremvc.interfaces.IFacade;
 	import org.puremvc.patterns.facade.Facade;
-	import org.puremvc.as3.demos.flex.weborb.bookstore.control.*;	
+	import org.puremvc.patterns.observer.Notification;	
 
 	public class ApplicationFacade extends Facade implements IFacade
 	{
@@ -42,8 +43,8 @@ package org.puremvc.as3.demos.flex.weborb.bookstore
 		}
 
 		public function startup( app:Bookstore ):void
-		{
-			facade.notifyObservers( new Notification( ApplicationFacade.APP_INIT, app ) );
+		{			
+			notifyObservers( new Notification( ApplicationFacade.APP_INIT, app ) );
 		}
 		
 	}

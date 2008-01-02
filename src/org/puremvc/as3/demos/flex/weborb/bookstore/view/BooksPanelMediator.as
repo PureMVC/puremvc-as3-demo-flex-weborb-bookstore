@@ -5,10 +5,10 @@
 */
 package org.puremvc.as3.demos.flex.weborb.bookstore.view
 {
-	import example.ApplicationFacade;
-	import example.model.BookProxy;
-	import example.model.vo.Book;
-	import example.view.components.BooksPanel;
+	import org.puremvc.as3.demos.flex.weborb.bookstore.ApplicationFacade;
+	import org.puremvc.as3.demos.flex.weborb.bookstore.model.BookProxy;
+	import org.puremvc.as3.demos.flex.weborb.bookstore.model.vo.Book;
+	import org.puremvc.as3.demos.flex.weborb.bookstore.view.components.BooksPanel;
 	
 	import flash.events.Event;
 	

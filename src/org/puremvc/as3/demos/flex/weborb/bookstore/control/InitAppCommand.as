@@ -9,7 +9,6 @@ package org.puremvc.as3.demos.flex.weborb.bookstore.control
 	import org.puremvc.as3.demos.flex.weborb.bookstore.model.BookProxy;
 	import org.puremvc.as3.demos.flex.weborb.bookstore.view.BookFormMediator;
 	import org.puremvc.as3.demos.flex.weborb.bookstore.view.BooksPanelMediator;
-	
 	import org.puremvc.interfaces.ICommand;
 	import org.puremvc.interfaces.INotification;
 	import org.puremvc.patterns.command.SimpleCommand;
@@ -24,7 +23,7 @@ package org.puremvc.as3.demos.flex.weborb.bookstore.control
 			//...
 			
 
-			var app:PureMVCExample = notification.getBody() as PureMVCExample;
+			var app:Bookstore = notification.getBody() as Bookstore;
 
 			facade.registerMediator( new BooksPanelMediator( app.booksPanel ) );
 			facade.registerMediator( new BookFormMediator( app.bookForm ) );
