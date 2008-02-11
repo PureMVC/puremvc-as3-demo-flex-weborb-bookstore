@@ -10,9 +10,9 @@ package org.puremvc.as3.demos.flex.weborb.bookstore.control
 	import mx.rpc.IResponder;
 	import mx.rpc.events.FaultEvent;
 	
-	import org.puremvc.interfaces.ICommand;
-	import org.puremvc.interfaces.INotification;
-	import org.puremvc.patterns.command.SimpleCommand;
+	import org.puremvc.as3.interfaces.ICommand;
+	import org.puremvc.as3.interfaces.INotification;
+	import org.puremvc.as3.patterns.command.SimpleCommand;
 
 	import org.puremvc.as3.demos.flex.weborb.bookstore.ApplicationFacade;
 	import org.puremvc.as3.demos.flex.weborb.bookstore.business.LibraryDelegate;

@@ -12,9 +12,9 @@ package org.puremvc.as3.demos.flex.weborb.bookstore.view
 	
 	import flash.events.Event;
 	
-	import org.puremvc.interfaces.IMediator;
-	import org.puremvc.interfaces.INotification;
-	import org.puremvc.patterns.mediator.Mediator;
+	import org.puremvc.as3.interfaces.IMediator;
+	import org.puremvc.as3.interfaces.INotification;
+	import org.puremvc.as3.patterns.mediator.Mediator;
 
 	public class BookFormMediator extends Mediator implements IMediator
 	{
@@ -25,7 +25,7 @@ package org.puremvc.as3.demos.flex.weborb.bookstore.view
 		
 		public function BookFormMediator(viewComponent:Object=null)
 		{
-			super(viewComponent);
+			super(NAME, viewComponent);
 			bookForm.addEventListener( BookForm.EVENT_UPDATE, onUpdate );
 		}
 		

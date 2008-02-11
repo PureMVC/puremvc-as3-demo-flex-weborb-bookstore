@@ -12,9 +12,9 @@ package org.puremvc.as3.demos.flex.weborb.bookstore.view
 	
 	import flash.events.Event;
 	
-	import org.puremvc.interfaces.IMediator;
-	import org.puremvc.interfaces.INotification;
-	import org.puremvc.patterns.mediator.Mediator;
+	import org.puremvc.as3.interfaces.IMediator;
+	import org.puremvc.as3.interfaces.INotification;
+	import org.puremvc.as3.patterns.mediator.Mediator;
 
 	public class BooksPanelMediator extends Mediator implements IMediator
 	{
@@ -25,7 +25,7 @@ package org.puremvc.as3.demos.flex.weborb.bookstore.view
 		
 		public function BooksPanelMediator(viewComponent:Object)
 		{
-			super(viewComponent);
+			super(NAME,viewComponent);
 			
 			booksPanel.addEventListener(BooksPanel.CREATE, onCreate);
 			booksPanel.addEventListener(BooksPanel.REMOVE, onDelete);
@@ -39,11 +39,6 @@ package org.puremvc.as3.demos.flex.weborb.bookstore.view
 		private function get booksPanel():BooksPanel
 		{
 			return viewComponent as BooksPanel;
-		}
-		
-		override public function getMediatorName():String
-		{
-			return NAME;
 		}
 		
 		private function onCreate(pEvt:Event):void

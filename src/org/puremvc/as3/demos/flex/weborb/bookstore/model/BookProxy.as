@@ -6,11 +6,11 @@
 package org.puremvc.as3.demos.flex.weborb.bookstore.model
 {
 	
-	import mx.collections.ArrayCollection;
+	import mx.collections.ArrayCollection;	
 	
-	import org.puremvc.interfaces.IProxy;
-	import org.puremvc.patterns.proxy.Proxy;
-
+	import org.puremvc.as3.interfaces.IProxy;
+	import org.puremvc.as3.patterns.proxy.Proxy;
+	
 	import org.puremvc.as3.demos.flex.weborb.bookstore.model.vo.Book;
 
 	public class BookProxy extends Proxy implements IProxy
