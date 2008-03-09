@@ -15,9 +15,7 @@
 		]]>
 	</mx:Script>
 	
-	<ns1:BookForm id="bookForm" x="418" y="10">
-	</ns1:BookForm>
-	<ns1:BooksPanel id="booksPanel" x="10" y="10">
-	</ns1:BooksPanel>
+	<ns1:BookForm id="bookForm" x="418" y="10"/>
+	<ns1:BooksPanel id="booksPanel" x="10" y="10"/>
 	
 </mx:Application>

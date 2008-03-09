@@ -3,7 +3,7 @@
  By David Deraedt <david.deraedt@puremvc.org>
  Your reuse is governed by the Creative Commons Attribution 3.0 License
 */
-package org.puremvc.as3.demos.flex.weborb.bookstore.business
+package org.puremvc.as3.demos.flex.weborb.bookstore.model.business
 {
 	import mx.rpc.IResponder;
 	import mx.rpc.remoting.mxml.RemoteObject;
