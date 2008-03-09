@@ -14,10 +14,10 @@ package org.puremvc.as3.demos.flex.weborb.bookstore.controller
 	import org.puremvc.as3.interfaces.INotification;
 	import org.puremvc.as3.patterns.command.SimpleCommand;
 
-	import org.puremvc.as3.demos.flex.weborb.bookstore.ApplicationFacade;
-	import org.puremvc.as3.demos.flex.weborb.bookstore.business.LibraryDelegate;
-	import org.puremvc.as3.demos.flex.weborb.bookstore.model.BookProxy;
-	import org.puremvc.as3.demos.flex.weborb.bookstore.model.vo.Book;
+	import org.puremvc.as3.demos.flex.weborb.bookstore.*;
+	import org.puremvc.as3.demos.flex.weborb.bookstore.model.*;
+	import org.puremvc.as3.demos.flex.weborb.bookstore.model.vo.*;
+	import org.puremvc.as3.demos.flex.weborb.bookstore.model.business.*;
 
 	public class CreateBookCommand extends SimpleCommand implements ICommand, IResponder
 	{

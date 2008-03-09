@@ -5,23 +5,21 @@
 */
 package org.puremvc.as3.demos.flex.weborb.bookstore.view
 {
-	import org.puremvc.as3.demos.flex.weborb.bookstore.ApplicationFacade;
-	import org.puremvc.as3.demos.flex.weborb.bookstore.model.BookProxy;
-	import org.puremvc.as3.demos.flex.weborb.bookstore.model.vo.Book;
-	import org.puremvc.as3.demos.flex.weborb.bookstore.view.components.BooksPanel;
-	
 	import flash.events.Event;
 	
 	import org.puremvc.as3.interfaces.IMediator;
 	import org.puremvc.as3.interfaces.INotification;
 	import org.puremvc.as3.patterns.mediator.Mediator;
 
+	import org.puremvc.as3.demos.flex.weborb.bookstore.*;
+	import org.puremvc.as3.demos.flex.weborb.bookstore.model.*;
+	import org.puremvc.as3.demos.flex.weborb.bookstore.model.vo.*;
+	import org.puremvc.as3.demos.flex.weborb.bookstore.view.components.*;
+	
 	public class BooksPanelMediator extends Mediator implements IMediator
 	{
 		
-		private var bookProxy:BookProxy;
 		public static const NAME:String = 'BooksPanelMediator';
-
 		
 		public function BooksPanelMediator(viewComponent:Object)
 		{
@@ -34,11 +32,6 @@ package org.puremvc.as3.demos.flex.weborb.bookstore.view
 			bookProxy = facade.retrieveProxy(BookProxy.NAME) as BookProxy ;
 			
 			booksPanel.books = bookProxy.books;
-		}
-		
-		private function get booksPanel():BooksPanel
-		{
-			return viewComponent as BooksPanel;
 		}
 		
 		private function onCreate(pEvt:Event):void
@@ -66,15 +59,11 @@ package org.puremvc.as3.demos.flex.weborb.bookstore.view
 		
 		override public function listNotificationInterests():Array
 		{
-			return [
-					ApplicationFacade.BOOK_SELECTED,
-				   ];		
-   
+			return [ ApplicationFacade.BOOK_SELECTED ];		
 		}
 		
 		override public function handleNotification(notification:INotification):void
 		{
-			
 			switch ( notification.getName() )
 			{
 
@@ -82,10 +71,14 @@ package org.puremvc.as3.demos.flex.weborb.bookstore.view
 					booksPanel.selectedBook = notification.getBody() as Book;
 					break;
 			}
-					
-			
 		}
 		
+		private function get booksPanel():BooksPanel
+		{
+			return viewComponent as BooksPanel;
+		}
+		
+		private var bookProxy:BookProxy;
 	}
 	
 }

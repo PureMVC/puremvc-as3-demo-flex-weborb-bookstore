@@ -5,40 +5,31 @@
 */
 package org.puremvc.as3.demos.flex.weborb.bookstore.view
 {
-	import org.puremvc.as3.demos.flex.weborb.bookstore.ApplicationFacade;
-	import org.puremvc.as3.demos.flex.weborb.bookstore.model.BookProxy;
-	import org.puremvc.as3.demos.flex.weborb.bookstore.model.vo.Book;
-	import org.puremvc.as3.demos.flex.weborb.bookstore.view.components.BookForm;
-	
 	import flash.events.Event;
 	
+	import org.puremvc.as3.demos.flex.weborb.bookstore.*;
+	import org.puremvc.as3.demos.flex.weborb.bookstore.model.*;
+	import org.puremvc.as3.demos.flex.weborb.bookstore.model.vo.*;
+	import org.puremvc.as3.demos.flex.weborb.bookstore.view.components.*;
 	import org.puremvc.as3.interfaces.IMediator;
 	import org.puremvc.as3.interfaces.INotification;
 	import org.puremvc.as3.patterns.mediator.Mediator;
-
+	
 	public class BookFormMediator extends Mediator implements IMediator
 	{
 		
-		private var bookProxy:BookProxy;
 		public static const NAME:String = 'BookFormMediator';
 		
-		
-		public function BookFormMediator(viewComponent:Object=null)
+		public function BookFormMediator(viewComponent:BookForm)
 		{
 			super(NAME, viewComponent);
 			bookForm.addEventListener( BookForm.EVENT_UPDATE, onUpdate );
 		}
 		
-		
-		public function get bookForm():BookForm{
-			return viewComponent as BookForm;
-		}		
-		
 		private function onUpdate(pEvt:Event):void
 		{
 			sendNotification(ApplicationFacade.UPDATE_BOOK, bookForm.editedBook);
 		}
-		
 		
 		override public function listNotificationInterests():Array
 		{
@@ -64,5 +55,10 @@ package org.puremvc.as3.demos.flex.weborb.bookstore.view
 			}			
 		}
 		
+		private function get bookForm():BookForm{
+			return viewComponent as BookForm;
+		}		
+		
+		private var bookProxy:BookProxy;
 	}
 }

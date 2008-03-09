@@ -3,7 +3,7 @@
  By David Deraedt <david.deraedt@puremvc.org>
  Your reuse is governed by the Creative Commons Attribution 3.0 License
 */
-package org.puremvc.as3.demos.flex.weborb.bookstore.control
+package org.puremvc.as3.demos.flex.weborb.bookstore.controller
 {
 	import mx.controls.Alert;
 	import mx.rpc.IResponder;
@@ -13,10 +13,10 @@ package org.puremvc.as3.demos.flex.weborb.bookstore.control
 	import org.puremvc.as3.interfaces.INotification;
 	import org.puremvc.as3.patterns.command.SimpleCommand;
 
-	import org.puremvc.as3.demos.flex.weborb.bookstore.ApplicationFacade;
-	import org.puremvc.as3.demos.flex.weborb.bookstore.business.LibraryDelegate;
-	import org.puremvc.as3.demos.flex.weborb.bookstore.model.BookProxy;
-	import org.puremvc.as3.demos.flex.weborb.bookstore.model.vo.Book;
+	import org.puremvc.as3.demos.flex.weborb.bookstore.*;
+	import org.puremvc.as3.demos.flex.weborb.bookstore.model.*;
+	import org.puremvc.as3.demos.flex.weborb.bookstore.model.vo.*;
+	import org.puremvc.as3.demos.flex.weborb.bookstore.model.business.*;
 	
 
 	public class DeleteBookCommand extends SimpleCommand implements ICommand, IResponder
@@ -29,7 +29,6 @@ package org.puremvc.as3.demos.flex.weborb.bookstore.control
 			bookToDelete = notification.getBody() as Book ;
 			var delegate:LibraryDelegate = new LibraryDelegate(this);
 			delegate.deleteBook(bookToDelete);
-			
 		}
 		
 		public function result(data:Object):void
