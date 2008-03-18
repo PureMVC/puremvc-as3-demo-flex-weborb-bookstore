@@ -43,7 +43,7 @@ package org.puremvc.as3.demos.flex.weborb.bookstore.view
 			newBook.price=0;
 			newBook.is_public=true;
 			
-			sendNotification(ApplicationFacade.CREATE_BOOK, newBook);
+			bookProxy.createBook(newBook);
 			
 		}
 		
@@ -54,7 +54,7 @@ package org.puremvc.as3.demos.flex.weborb.bookstore.view
 		
 		private function onDelete(pEvt:Event):void
 		{
-			sendNotification(ApplicationFacade.DELETE_BOOK, booksPanel.selectedBook);
+			bookProxy.deleteBook(booksPanel.selectedBook);
 		}
 		
 		override public function listNotificationInterests():Array

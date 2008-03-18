@@ -14,12 +14,8 @@ package org.puremvc.as3.demos.flex.weborb.bookstore
 
 	public class ApplicationFacade extends Facade implements IFacade
 	{
-		
+	
 		public static const STARTUP:String 			= "startup";	
-		public static const CREATE_BOOK:String 		= "createBook";	
-		public static const GET_BOOKS:String 		= "getBooks";					
-		public static const UPDATE_BOOK:String 		= "updateBook";			
-		public static const DELETE_BOOK:String 		= "deleteBook";	
 		public static const BOOK_SELECTED:String 	= "bookSelected";							
 		public static const BOOK_DELETED:String 	= "bookDeleted";
 		
@@ -33,13 +29,9 @@ package org.puremvc.as3.demos.flex.weborb.bookstore
 		
 		override protected function initializeController():void
 		{
-			super.initializeController();
-			
+			super.initializeController();			
+
 			registerCommand(STARTUP, 		StartupCommand); 
-			registerCommand(CREATE_BOOK, 	CreateBookCommand);			
-			registerCommand(GET_BOOKS, 		GetBooksCommand);			
-			registerCommand(UPDATE_BOOK, 	UpdateBookCommand);						
-			registerCommand(DELETE_BOOK, 	DeleteBookCommand);
 			
 		}
 

@@ -36,7 +36,7 @@
 		/>
 
 	<mx:Form x="10" y="10">
-		<mx:FormHeading label="{currentBook.title}"/>
+		<mx:FormHeading label="{(currentBook)?currentBook.title:''}"/>
 		<mx:FormItem label="id">
 			<mx:Label text="{ currentBook.idbook}"/>
 		</mx:FormItem>
